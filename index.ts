@@ -1,1 +1,1 @@
-var fn = ()=>'response';
+var fn = ()=>'response'
