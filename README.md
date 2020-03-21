@@ -1,5 +1,6 @@
 <h1>TypeScript有关<h1>    
-    <hr/>
+  
+<h3>一些相关命令</h3>
 
 前提：安装ts npm  install -g typescript ,安装node
 
