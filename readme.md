@@ -29,3 +29,63 @@ tsc--init 可以初始化tsconfig.json文件
 tsc +文件名会忽略tsconfig.json的配置文件。tsc不会
 
 npm init 会生成初始的package.json文件
+
+
+
+总结interface和type的区别
+1 二者都可以定义类型
+2 interface可以使用extends/implements,type不行(接口继承一个或多个接口，类实现一个或多个接口)
+
+interface Car{
+    name：string
+}
+interface Bike{
+    mile:string 
+}
+interface DZ extends Car,Bike{
+
+}
+class BT implements Car,Bike{
+
+}
+
+3 二者都可以对一个对象添加几个type 或者interface,但是interface 可以重复命名，type不行
+type P = {
+    name:string,
+    print():void,
+}
+type Car  = {
+    mile:string
+}
+interface DZ{
+    age:number
+}
+interface bike{
+
+}
+interface DZ{
+    age1:number
+}
+let o:P&Car&DZ&bike={
+    name:'1',
+    mile:'111',
+    print:function(){
+
+    },
+    age:1,
+    age1:1
+}
+
+4 type 可以直接作用于基本类型,联合类型,interface 不行
+
+type Name = string; // 基本类型
+type NameResolver = () => string; // 函数
+type NameOrResolver = Name | NameResolver; // 联合类型（在interface中其实就是接口继承接口来实现）
+
+function getName(n: NameOrResolver): Name {
+    if (typeof n === 'string') {//为string时
+        return n;
+    } else {//为函数时
+        return n();
+    }
+}
