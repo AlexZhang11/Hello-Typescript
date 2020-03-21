@@ -1,5 +1,6 @@
 <h1>TypeScript有关<h1>    
-    
+    <hr/>
+
 前提：安装ts npm  install -g typescript ,安装node
 
 tsc index.ts(要转换的ts文件名) 可以编译生成对应js文件
