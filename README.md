@@ -1,6 +1,11 @@
+<h1>TypeScript有关<h1>    
+    
 前提：安装ts npm  install -g typescript ,安装node
+
 tsc index.ts(要转换的ts文件名) 可以编译生成对应js文件
+
 随时监控编译ts文件可以使用 tsc -w index.ts
+
 node index.js 可以在控制台运行出编译后的ts文件的内容
 
 直接与运行ts文件不编译可以安装ts-node npm install -g ts-node
@@ -11,7 +16,10 @@ node index.js 可以在控制台运行出编译后的ts文件的内容
 
 如果要在class里面使用set get关键字 要先按照es5或6编译tsc --target es5(es6) index.ts
 或者加一个配置文件tsconfig.json
+
 配置内容为
+
+```
 {
     "compilerOptions":{
         target:"es5"
@@ -20,9 +28,9 @@ node index.js 可以在控制台运行出编译后的ts文件的内容
         "*.ts"
     ]
 }
-c
-运行时使用tsc&&node.index.js即可
+```
 
+运行时使用tsc&&node.index.js即可
 
 tsc--init 可以初始化tsconfig.json文件
 
@@ -38,9 +46,9 @@ npm init 会生成初始的package.json文件
 
 <p>1 二者都可以定义类型<p>
 
-<p>2 interface可以使用extends/implements,type不行(接口继承一个或多个接口，类实现一个或多个接口)</p>
+<p>2 interface可以使用extends/implements,type不行(接口继承一个或多个接口，类实现一个或多个接口)</p>'
 
-<script>
+```
 interface Car{
     name：string
 }
@@ -54,11 +62,11 @@ class BT implements Car,Bike{
 
 }
 
-</script>
+```
 
 <p>3 二者都可以对一个对象添加几个type 或者interface,但是interface 可以重复命名，type不行</p>
 
-<script>
+```
 type P = {
     name:string,
     print():void,
@@ -84,11 +92,11 @@ let o:P&Car&DZ&bike={
     age:1,
     age1:1
 }
-</script>
+```
 
 <p>4 type 可以直接作用于基本类型,联合类型,interface 不行</p>
 
-<script>
+```
 type Name = string; // 基本类型
 type NameResolver = () => string; // 函数
 type NameOrResolver = Name | NameResolver; // 联合类型（在interface中其实就是接口继承接口来实现）
@@ -100,4 +108,4 @@ function getName(n: NameOrResolver): Name {
         return n();
     }
 }
-</script>
+```
