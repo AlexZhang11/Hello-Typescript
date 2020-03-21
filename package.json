@@ -1,0 +1,19 @@
+{
+  "name": "hello-typescript",
+  "version": "1.0.0",
+  "description": "前提：安装ts npm  install -g typescript ,安装node\r tsc index.ts(要转换的ts文件名) 可以编译生成对应js文件\r 随时监控编译ts文件可以使用 tsc -w index.ts\r node index.js 可以在控制台运行出编译后的ts文件的内容",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexZhang11/Hello-Typescript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexZhang11/Hello-Typescript/issues"
+  },
+  "homepage": "https://github.com/AlexZhang11/Hello-Typescript#readme"
+}
